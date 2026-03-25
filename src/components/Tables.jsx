@@ -2,25 +2,26 @@
 import { motion } from "framer-motion";
 
 const tables = [
-  { 
-    name: "Bronze Table", 
-    price: "800", 
-    perks: ["1 Bottles (Local Spirit)", "Mixers", "Reserved Seating (4 people)"] 
+     { 
+    name: "VIP Table", 
+    price: "4000", 
+    perks: ["4 Bottles (Top Shelf)", "Unlimited Mixers", "3 Shisha Pots", "Dedicated Waiter"] 
   },
-  { 
-    name: "Silver Table", 
-    price: "1500", 
-    perks: ["2 Bottles (Premium)", "Mixers", "1 Shisha Pot seating (6 people)"] 
-  },
-  { 
+      { 
     name: "Gold Table", 
     price: "2500", 
     perks: ["3 Bottles (Premium)", "Mixers", "2 Shisha Pots", "VIP Seating (8 people)"] 
   },
+    { 
+    name: "Silver Table", 
+    price: "1500", 
+    perks: ["2 Bottles (Premium)", "Mixers", "1 Shisha Pot seating (6 people)"] 
+  },
+
   { 
-    name: "VIP Table", 
-    price: "4000", 
-    perks: ["4 Bottles (Top Shelf)", "Unlimited Mixers", "3 Shisha Pots", "Dedicated Waiter"] 
+    name: "Bronze Table", 
+    price: "800", 
+    perks: ["1 Bottles (Local Spirit)", "Mixers", "Reserved Seating (4 people)"] 
   },
 ];
 
