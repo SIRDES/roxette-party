@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-gold: #D4AF37;
+  --dark-gold: #996515;
+  --bg-dark: #050510;
+  --bg-purple: #1a0033;
+  --glass-bg: rgba(20, 20, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --gold-gradient: linear-gradient(45deg, #e6b980, #eacda3);
+  --gold-btn-gradient: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #aa771c);
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -6,58 +19,137 @@
 }
 
 body {
-  background: radial-gradient(circle at top, #1a0033, #050510);
+  background: var(--bg-dark);
   color: white;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* GLOW EFFECT */
-.glow {
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+/* TYPOGRAPHY */
+h1, h2, h3 {
+  text-transform: uppercase;
 }
 
-/* BUTTON */
-.btn {
-  background: linear-gradient(45deg, gold, #ffcc00);
-  color: black;
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+.script-font {
+  font-family: 'Mrs Saint Delafield', cursive;
+  text-transform: none;
+  line-height: 1;
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px gold;
+.block-font {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
 }
 
-/* SECTION */
-.section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-body::before {
-  content: "";
+/* BACKGROUND EFFECTS */
+.ambient-glow {
   position: fixed;
-  width: 300px;
-  height: 300px;
-  background: purple;
-  filter: blur(120px);
-  top: 20%;
-  left: 10%;
-  animation: float 6s infinite alternate;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 10% 20%, rgba(120, 20, 200, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(200, 150, 50, 0.1) 0%, transparent 40%);
+  pointer-events: none;
 }
 
-@keyframes float {
-  from {
-    transform: translateY(0px);
-  }
+/* COMPONENTS */
+.btn-gold {
+  background: var(--gold-btn-gradient);
+  background-size: 200% auto;
+  color: #1a0033;
+  padding: 12px 28px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.5s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 
-  to {
-    transform: translateY(100px);
-  }
+.btn-gold:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.card-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: 0.3s ease;
+}
+
+.card-glass:hover {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 30px rgba(120, 20, 200, 0.2);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.section-title span {
+  color: var(--primary-gold);
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+
+/* INPUT FOCUS */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-gold) !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.btn-whatsapp {
+  background: #25D366 !important;
+  color: white !important;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 0.95rem;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section-title { font-size: 1.8rem; }
+  .script-font { font-size: 3rem !important; }
+  .block-font { font-size: 3rem !important; }
+}
+
+/* ANIMATIONS */
+@keyframes pulseGlow {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.8; }
 }

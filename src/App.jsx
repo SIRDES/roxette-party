@@ -8,6 +8,7 @@ import "./styles.css";
 export default function App() {
   return (
     <>
+      <div className="ambient-glow"></div>
       <Hero />
       <Reservation />
       <Tables />
