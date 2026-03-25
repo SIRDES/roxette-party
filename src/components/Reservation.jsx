@@ -54,7 +54,7 @@ export default function Reservation({ selectedPackage }) {
           </p>
 
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "15px" }}>
+            <div className="form-row">
               <input 
                 type="text" 
                 name="name"
