@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Reservation from "./components/Reservation";
 import Tables from "./components/Tables";
 import Gallery from "./components/Gallery";
+import ParticlesBackground from "./components/ParticlesBackground";
 import "./styles.css";
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
 
   return (
     <>
+      <ParticlesBackground />
       <div className="ambient-glow"></div>
       <Hero />
       <Reservation selectedPackage={selectedPackage} />

@@ -19,32 +19,19 @@ export default function Hero() {
         transition={{ duration: 1.2 }}
         style={{ textAlign: "center", maxWidth: "800px" }}
       >
-        <div style={{ marginBottom: "-30px" }}>
-          <span className="script-font" style={{ fontSize: "6rem", color: "var(--primary-gold)", display: "block" }}>Roxette</span>
+        <div>
+          <span className="script-font hero-title-accent">Roxette</span>
         </div>
         
-        <h1 className="block-font" style={{ 
-          fontSize: "5.5rem", 
-          lineHeight: "0.9",
-          margin: "0",
-          background: "linear-gradient(to bottom, #fff, #bbb)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          textShadow: "0 0 30px rgba(255,255,255,0.2)"
-        }}>
+        <h1 className="block-font hero-title-main">
           Easter Friday
         </h1>
         
-        <div style={{ marginTop: "-20px" }}>
-          <span className="script-font" style={{ fontSize: "5rem", color: "var(--primary-gold)" }}>Vibes</span>
+        <div>
+          <span className="script-font hero-title-bottom">Vibes</span>
         </div>
-
-        <p className="block-font" style={{ 
-          fontSize: "1.5rem", 
-          marginTop: "20px", 
-          letterSpacing: "4px",
-          color: "rgba(255,255,255,0.9)"
-        }}>
+        
+        <p className="block-font hero-subtitle">
           Afrobeats x Amapiano Party
         </p>
 
