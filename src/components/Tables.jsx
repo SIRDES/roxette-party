@@ -24,7 +24,15 @@ const tables = [
   },
 ];
 
-export default function Tables() {
+export default function Tables({ onSelectPackage }) {
+  const handleReserve = (pkgName, price) => {
+    onSelectPackage(`${pkgName} - GHS ${price}`);
+    const reservationSection = document.getElementById("reservation");
+    if (reservationSection) {
+      reservationSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="section" style={{ padding: "100px 20px" }}>
       <div style={{ textAlign: "center", marginBottom: "60px" }}>
@@ -77,7 +85,13 @@ export default function Tables() {
               ))}
             </div>
 
-            <button className="btn-gold" style={{ width: "100%", fontSize: "0.9rem" }}>Reserve Now</button>
+            <button 
+              className="btn-gold" 
+              style={{ width: "100%", fontSize: "0.9rem" }}
+              onClick={() => handleReserve(t.name, t.price)}
+            >
+              Reserve Now
+            </button>
           </motion.div>
         ))}
       </div>

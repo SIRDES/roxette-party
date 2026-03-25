@@ -53,6 +53,12 @@ export default function Hero() {
           whileTap={{ scale: 0.95 }}
           className="btn-gold"
           style={{ marginTop: "40px" }}
+          onClick={() => {
+            const reservationSection = document.getElementById("reservation");
+            if (reservationSection) {
+              reservationSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
         >
           Reserve Your Table
         </motion.button>

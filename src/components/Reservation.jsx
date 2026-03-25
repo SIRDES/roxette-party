@@ -1,9 +1,43 @@
-
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-export default function Reservation() {
+export default function Reservation({ selectedPackage }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    package: "Select Table Package",
+    requests: ""
+  });
+
+  useEffect(() => {
+    if (selectedPackage) {
+      setFormData(prev => ({ ...prev, package: selectedPackage }));
+    }
+  }, [selectedPackage]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, phone, package: pkg, requests } = formData;
+    
+    const message = `Hello, I would like to make a reservation.
+*Name:* ${name}
+*Phone:* ${phone}
+*Package:* ${pkg}
+*Special Requests:* ${requests || "None"}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/233548705628?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
-    <section className="section" style={{ padding: "100px 20px", maxWidth: "1200px", margin: "0 auto" }}>
+    <section id="reservation" className="section" style={{ padding: "100px 20px", maxWidth: "1200px", margin: "0 auto" }}>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "60px", alignItems: "start" }}>
         
         {/* Left: Form */}
@@ -19,13 +53,34 @@ export default function Reservation() {
             Reserve your table and enjoy the best Easter Friday party in town! Select your table package below and let's make it a night to remember.
           </p>
 
-          <form style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "15px" }}>
-              <input type="text" placeholder="Full Name" style={inputStyle} />
-              <input type="text" placeholder="Phone Number" style={inputStyle} />
+              <input 
+                type="text" 
+                name="name"
+                placeholder="Full Name" 
+                style={inputStyle} 
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <input 
+                type="text" 
+                name="phone"
+                placeholder="Phone Number" 
+                style={inputStyle} 
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
             </div>
             
-            <select style={inputStyle}>
+            <select 
+              name="package"
+              style={inputStyle}
+              value={formData.package}
+              onChange={handleChange}
+            >
               <option>Select Table Package</option>
               <option>Bronze Table - GHS 800</option>
               <option>Silver Table - GHS 1500</option>
@@ -33,7 +88,13 @@ export default function Reservation() {
               <option>VIP Table - GHS 4000</option>
             </select>
 
-            <textarea placeholder="Special requests..." style={{ ...inputStyle, minHeight: "100px" }}></textarea>
+            <textarea 
+              name="requests"
+              placeholder="Special requests..." 
+              style={{ ...inputStyle, minHeight: "100px" }}
+              value={formData.requests}
+              onChange={handleChange}
+            ></textarea>
 
             <button type="submit" className="btn-gold" style={{ width: "100%", marginTop: "10px" }}>
               Reserve Now
