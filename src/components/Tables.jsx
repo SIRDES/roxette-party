@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const tables = [
      { 
-    name: "Table for 10 (Platimium)", 
+    name: "Table for 10 (Platinum)", 
     price: "1000", 
     perks: ["A Table", "10 seater", "10 Bottled Water", "2 bottles of Palm Wine (1ltr) / 2 bottles of Coke (1.5Ltr)", "2 bottled wine", "Club 1 Crate (12 Bottles)"] 
   },
