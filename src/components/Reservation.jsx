@@ -82,10 +82,10 @@ export default function Reservation({ selectedPackage }) {
               onChange={handleChange}
             >
               <option>Select Table Package</option>
-              <option>Bronze Table - GHS 800</option>
-              <option>Silver Table - GHS 1500</option>
-              <option>Gold Table - GHS 2500</option>
-              <option>VIP Table - GHS 4000</option>
+              <option>Table for 5 (Bronze) - GHS 250</option>
+              <option>Table for 5 (Silver) - GHS 550</option>
+              <option>Table for 10 (Gold) - GHS 400</option>
+              <option>Table for 10 (Platimium) - GHS 1000</option>
             </select>
 
             <textarea 

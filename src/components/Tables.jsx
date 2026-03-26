@@ -3,27 +3,29 @@ import { motion } from "framer-motion";
 
 const tables = [
      { 
-    name: "VIP Table", 
-    price: "4000", 
-    perks: ["4 Bottles (Top Shelf)", "Unlimited Mixers", "3 Shisha Pots", "Dedicated Waiter"] 
+    name: "Table for 10 (Platimium)", 
+    price: "1000", 
+    perks: ["A Table", "10 seater", "10 Bottled Water", "2 bottles of Palm Wine (1ltr) / 2 bottles of Coke (1.5Ltr)", "2 bottled wine", "Club 1 Crate (12 Bottles)"] 
   },
       { 
-    name: "Gold Table", 
-    price: "2500", 
-    perks: ["3 Bottles (Premium)", "Mixers", "2 Shisha Pots", "VIP Seating (8 people)"] 
+    name: "Table for 10 (Gold)", 
+    price: "400", 
+    perks: ["A Table", "10 seater", "10 Bottled Water", "2 bottles of Palm Wine (1ltr) / 2 bottles of Coke (1.5Ltr)"] 
   },
     { 
-    name: "Silver Table", 
-    price: "1500", 
-    perks: ["2 Bottles (Premium)", "Mixers", "1 Shisha Pot seating (6 people)"] 
+    name: "Table for 5 (Silver)", 
+    price: "550", 
+    perks: ["A Table", "5 seater", "5 Bottled Water", "Palm Wine (1ltr) / Coke (1.5Ltr)", "Club (6 Bottles)", "Bottled Wine"] 
   },
 
   { 
-    name: "Bronze Table", 
-    price: "800", 
-    perks: ["1 Bottles (Local Spirit)", "Mixers", "Reserved Seating (4 people)"] 
+    name: "Table for 5 (Bronze)", 
+    price: "250", 
+    perks: ["A Table", "5 seater", "5 Bottled Water", "Palm Wine (1ltr) / Coke (1.5Ltr)"] 
   },
 ];
+
+
 
 export default function Tables({ onSelectPackage }) {
   const handleReserve = (pkgName, price) => {
